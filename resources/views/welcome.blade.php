@@ -27,6 +27,12 @@
     </head>
 
     <body class="antialiased">
+        {{-- test ดึง vue --}}
+        <h1>  test ดึง vue </h1>
+        <div id="vuehome">  </div>
+        <script src="{{ mix('js/app.js')}}"></script>
+
+
         <div class="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
             @if (Route::has('login'))
                 <div class="sm:fixed sm:top-0 sm:right-0 p-6 text-right z-10">
@@ -50,7 +56,7 @@
     <script>
      var botmanWidget = {
          aboutText: '',
-         introMessage: "✋ Hi!"
+         introMessage: "✋ Hello!"
      };
     </script>
   
@@ -76,7 +82,7 @@
 
                         <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
                             
-                        <form method="post" action="{{route('upload')}}"  enctype="multipart/form-data" class="form-horizontal" role="form">
+                        <form method="POST" action="{{route('upload')}}"  enctype="multipart/form-data" class="form-horizontal" role="form">
                             
                                     @csrf
                             <div style="margin-bottom: 25px" class="input-group">
