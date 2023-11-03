@@ -1,36 +1,23 @@
-import { defineConfig } from 'vite';
-import laravel from 'laravel-vite-plugin';
-import vue from "@vitejs/plugin-vue";
-import path from "path";
 
+// vite.config.js
+import { defineConfig } from 'vite';
+
+import laravel from 'laravel-vite-plugin';
+import vue from '@vitejs/plugin-vue'
 
 export default defineConfig({
-    base: "/",
     plugins: [
         vue({
             template: {
-            transformAssetUrls: {
-            base: null,
-            includeAbsolute: false,
-            },
-            },
-            }),
-
+              compilerOptions: {
+                // treat all tags with a dash as custom elements
+                isCustomElement: (tag) => tag.includes('-')
+              }
+            }
+          }),
         laravel({
-            input: [
-                'resources/sass/app.scss',
-                'resources/js/app.js',
-            ],
+            input: ['resources/css/app.css', 'resources/js/app.js'],
             refresh: true,
         }),
     ],
-    resolve: {
-        alias: {
-        "@/": path.join(__dirname, "/resources/ts/src/"),
-        "~": path.join(__dirname, "/node_modules/"),
-        },
-        },
-        build: {
-        chunkSizeWarningLimit: 1600,
-        },
 });
