@@ -20,4 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 /* ocr */
 /* Route::post('/upload', 'App\Http\Controllers\UploadImageController@upload'); */
-Route::post('/upload','UploadImageController@upload')->name('upload');
+
+/* ใช้ */
+/* Route::post('/upload','UploadImageController@upload')->name('upload'); */

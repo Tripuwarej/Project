@@ -13,16 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/{any}', function () {
     return view('welcome');
-});
+}) ->where("any" ,".*");
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::match(['get', 'post'], '/botman', 'BotManController@handle');
+/* Route::match(['get', 'post'], '/botman', 'BotManController@handle'); */
 
 
 /* ocr */
-Route::post('/upload','UploadImageController@upload')->name('upload');
+/* Route::post('/upload','UploadImageController@upload')->name('upload'); */
