@@ -37,4 +37,16 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+
+
+    /* เพิ่ม user role */
+    protected function redirectTo()
+{
+    if(auth()->user()->isAdmin()) {
+        return '/admin/dashboard';
+    } else {
+        return '/home';
+    }
+}
 }
