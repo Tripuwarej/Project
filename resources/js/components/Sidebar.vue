@@ -1,5 +1,7 @@
 <script setup>
 import { ref } from "vue";
+import NavLink from "@/Components/NavLink.vue";
+
 
 const showingNavigationDropdown = ref(false);
 const open = ref(false);
@@ -26,10 +28,12 @@ const toggle = () => {
 
             <!-- ------------------------------------------------------------------------------- -->
             <!-- drodown in Sidebar -->
+
             <nav>
-                <a
-                    href="/"
-                    class="flex item-center space-x-2 py-3 px-4 hover:bg-indigo-500 rounded transition duration-200"
+                <NavLink 
+                    :href="route('dashboard')"
+                    :active="route().current('dashboard')"
+                     class="flex item-center space-x-2 py-3 px-4 hover:bg-indigo-500 rounded transition duration-200"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +49,7 @@ const toggle = () => {
                         />
                     </svg>
                     <span class="text-slate-300">หน้าหลัก</span>
-                </a>
+                </NavLink>
                 <!-- ------------------------------------------------------------------------------- -->
                 <a
                     href=""
@@ -146,7 +150,7 @@ const toggle = () => {
         <!--Drawer -->
         <button
             @click.prevent="toggle()"
-            class="w-12 h-48 p-1 my-auto rounded text-white bg-gray-600 text-center focus:outline-none hover:bg-gray-500 transition-color duration-300"
+            class="w-12 h-10 p-1  rounded text-white bg-gray-600 text-center focus:outline-none hover:bg-gray-500 transition-color duration-300"
         >
             <span
                 :class="[right ? '-rotate-90' : 'rotate-90']"
