@@ -3,8 +3,8 @@ import { ref } from "vue";
 
 const showingNavigationDropdown = ref(false);
 const open = ref(false);
-const dimmer = ref(true);
-const right = ref(false);
+/* const dimmer = ref(true);
+const right = ref(false); */
 
 const toggle = () => {
     open.value = !open.value;
