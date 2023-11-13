@@ -1,23 +1,25 @@
 <script setup>
-import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
-import BreezeLabel from '@/Components/Label.vue';
-import BreezeInput from '@/Components/Input.vue';
-import BreezeTextArea from '@/Components/Textarea.vue';
-import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+import AuthenticatedLayout from '/resources/js/Layouts/AuthenticatedLayout.vue';
+import TextArea from '/resources/js/Components/Textarea.vue';
+import InputLabel from '/resources/js/Components/InputLabel.vue';
+import { Head, Link, useForm } from "@inertiajs/vue3";
+/* const props = defineProps({
+    post: Object,
+});
 const form = useForm({
-    title: '',
-    body: ''
+    title: props.post.title,
+    body: props.post.body
 });
 const submit = () => {
-    form.post(route('posts.store'));
-};
+    form.put(route('posts.update', props.post.id));
+}; */
 </script>
 <template>
     <Head title="Dashboard" />
-    <BreezeAuthenticatedLayout>
+    <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Create Post
+                Edit Post
             </h2>
         </template>
         <div class="py-12">
@@ -35,9 +37,9 @@ const submit = () => {
                         <form name="createForm" @submit.prevent="submit">
                                 <div className="flex flex-col">
                                     <div className="mb-4">
-                                        <BreezeLabel for="title" value="Title" />
+                                        <InputLabel for="title" value="Title" />
 
-                                        <BreezeInput 
+                                        <InputLabel
                                             id="title" 
                                             type="text" 
                                             class="mt-1 block w-full" 
@@ -48,9 +50,9 @@ const submit = () => {
                                         </span>
                                     </div>
                                     <div className="mb-4">
-                                        <BreezeLabel for="body" value="Body" />
+                                        <InputLabel for="body" value="Body" />
 
-                                        <BreezeTextArea 
+                                        <TextArea 
                                             id="body" 
                                             class="mt-1 block w-full" 
                                             v-model="form.body" 
@@ -74,5 +76,5 @@ const submit = () => {
                 </div>
             </div>
         </div>
-    </BreezeAuthenticatedLayout>
+    </AuthenticatedLayout>
 </template>

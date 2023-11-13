@@ -1,19 +1,20 @@
 <script setup>
-import BreezeAuthenticatedLayout from '@/Layouts/Authenticated.vue';
-import { Head, Link, useForm } from '@inertiajs/inertia-vue3';
+import { ref } from "vue";
+import AuthenticatedLayout from '/resources/js/Layouts/AuthenticatedLayout.vue';
+import { Head, Link, useForm } from "@inertiajs/vue3";
 defineProps({
     posts: Array,
 });
-const form = useForm();
+/* const form = useForm();
 function destroy(id) {
     if (confirm("Are you sure you want to Delete")) {
         form.delete(route('posts.destroy', id));
     }
-}
+} */
 </script>
 <template>
     <Head title="Dashboard" />
-    <BreezeAuthenticatedLayout>
+    <AuthenticatedLayout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Laravel 9 Vue JS CRUD App using Vite Example - LaravelTuts.com
@@ -69,5 +70,5 @@ function destroy(id) {
                 </div>
             </div>
         </div>
-    </BreezeAuthenticatedLayout>
+    </AuthenticatedLayout>
 </template>
