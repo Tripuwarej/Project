@@ -2,7 +2,6 @@
 import { ref } from "vue";
 import NavLink from "@/Components/NavLink.vue";
 
-
 const showingNavigationDropdown = ref(false);
 const open = ref(false);
 /* const dimmer = ref(true);
@@ -30,10 +29,10 @@ const toggle = () => {
             <!-- drodown in Sidebar -->
 
             <nav>
-                <NavLink 
+                <NavLink
                     :href="route('dashboard')"
                     :active="route().current('dashboard')"
-                     class="flex item-center space-x-2 py-3 px-4 hover:bg-indigo-500 rounded transition duration-200"
+                    class="flex item-center space-x-2 py-3 px-4 hover:bg-indigo-500 rounded transition duration-200"
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -148,21 +147,26 @@ const toggle = () => {
                     </svg>
                 </button> -->
         <!--Drawer -->
-        <button
-            @click.prevent="toggle()"
-            class="w-12 h-10 p-1  rounded text-white bg-gray-600 text-center focus:outline-none hover:bg-gray-500 transition-color duration-300"
+        <svg
+             @click.prevent="toggle()"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class=" m-3 w-10 h-10  p-1 rounded  text-center focus:outline-none hover:bg-gray-100 transition-color duration-300"
         >
-            <span
-                :class="[right ? '-rotate-90' : 'rotate-90']"
-                class="block transform origin-center font-bold"
-            >
-                Drawer
-            </span>
-        </button>
+            <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+        </svg>
+
+       
     </div>
 </template>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap");
 </style>
-
