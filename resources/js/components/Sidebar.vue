@@ -69,8 +69,8 @@ const toggle = () => {
                     <span class="text-slate-300">สถิติ</span>
                 </NavLink>
                 <!-- ------------------------------------------------------------------------------- -->
-                <a
-                    href=""
+                <NavLink
+                
                     class="flex item-center space-x-2 py-3 px-4 hover:bg-indigo-500 rounded transition duration-200"
                 >
                     <svg
@@ -89,9 +89,9 @@ const toggle = () => {
                         />
                     </svg>
                     <span class="text-slate-300">คุยกับเรา</span>
-                </a>
+                </NavLink>
                 <!-- ------------------------------------------------------------------------------- -->
-                <a
+                <NavLink
                     href=""
                     class="flex item-center space-x-2 py-3 px-4 hover:bg-indigo-500 rounded transition duration-200"
                 >
@@ -109,7 +109,7 @@ const toggle = () => {
                         />
                     </svg>
                     <span class="text-slate-300">ความรู้</span>
-                </a>
+                </NavLink>
                 <!-- ------------------------------------------------------------------------------- -->
                 <a
                     href=""

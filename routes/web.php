@@ -5,6 +5,9 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\PostController;
+
+use App\Http\Controllers\BotmanController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -49,3 +52,20 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/dashboard', 'admin\AdminController@index');
     });
 }); */
+
+//chatbot-----------------------------------------------------
+// Route::resource('chatbot', BotmanController::class);
+
+// Route::get('/chatbot', function () {
+//     return Inertia::render('index');
+// })->middleware(['get', 'post'])->name('index');
+
+
+
+// Route::resource('', PostController::class);
+
+
+Route::get('/chatbot', function () {
+    return view('welcome');
+});
+Route::match(['get', 'post'], '/botman', 'BotManController@handle');

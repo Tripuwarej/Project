@@ -28,6 +28,7 @@
         "test": "tests"
     },
     "dependencies": {
+        "@heroicons/vue": "^2.0.18",
         "@vitejs/plugin-vue": "4.4.0",
         "vue": "3.3.7",
         "vue-loader": "17.3.1",
